@@ -1,5 +1,7 @@
 ﻿
 using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
 
 internal class Program
 {
@@ -9,9 +11,151 @@ internal class Program
         // CalcualarDiasDeVida();
         //ImprimirMinimoDe4();
         //TipodeTriangulo();
-        FechaValida();
-
+        //FechaValida();
+        //HorasQueFaltanTrabajar();
+        fechavalida2();
     }
+
+    private static void fechavalida2()
+    {
+        int dia, mes, año;
+        bool DiaValido = true;
+        bool MesValido = true;
+        bool AñoValido = true;
+
+
+        Console.Write("Ingrese el día: ");
+        dia = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el mes: ");
+        mes = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el año: ");
+        año = int.Parse(Console.ReadLine());
+
+        // abril (4) - junio (6) - septiembre (9) - noviembre (11)  = 30 dias
+        //año bisiesto = año % 4
+
+        if (dia >= 1 && dia <= 31)
+        {
+            if (mes == 4 || mes == 6 || mes == 9 || mes == 11)
+            {
+                if (dia <= 30)
+                {
+                    Console.WriteLine("El dia es valido!");
+                    DiaValido = true;
+                }
+                else
+                {
+                    Console.WriteLine("El dia invalido!");
+                    DiaValido = false;
+                }
+            }
+            else
+            {
+                if (mes == 2)  //si es febrero
+                {
+                    if (año % 4 == 0)  //si es bisiesto
+                    {
+                        if (dia > 29)
+                        {
+                            Console.WriteLine("Tu dia es invalido!");
+                            DiaValido = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tu dia es valido!");
+                            DiaValido = true;
+                        }
+                    }
+                    else
+                    {
+                        if (dia <= 28)
+                        {
+                            Console.WriteLine("Tu dia es valido!");
+                            DiaValido = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Tu dia es invalido!");
+                            DiaValido = false;
+                        }
+                    }
+                }
+                else  //si no es febrero
+                {
+                    if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+                    {
+                        Console.WriteLine("El dia valido!");
+                        DiaValido = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("El dia invalido!");
+                        DiaValido = false;
+                    }
+                   
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("El dia es invalido!");
+            DiaValido = false;
+        }
+
+        if (mes >= 1 && mes <= 12)
+        {
+            Console.WriteLine("El mes es valido!");
+            MesValido = true;
+        }
+        else
+        { 
+            Console.WriteLine("El mes es invalido!");
+            MesValido = false;
+        }
+
+        if (año >= 1)
+        {
+            Console.WriteLine("Es un año valido");
+            AñoValido = true;
+        }
+        else
+        {
+            Console.WriteLine("Es un año invalido!");
+            AñoValido = false;
+        }
+
+        if (DiaValido == true && MesValido == true && AñoValido== true)
+        {
+            Console.WriteLine("La fecha es valida!");
+        }
+        else
+        {
+            Console.WriteLine("La fecha ingresada no es válida.");
+        }
+    }
+    private static void HorasQueFaltanTrabajar()
+    {
+        int horasTrabajadas, horasFaltantes;
+        string dia;
+
+        Console.Write("Ingrese horas trabajadas: ");
+        horasTrabajadas = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese dia trabajado: ");
+        dia = Console.ReadLine();
+
+        horasFaltantes = 5 - horasTrabajadas;
+        
+        if (dia == "jueves")
+        {
+            horasFaltantes = horasFaltantes + 2;
+        }
+
+        Console.WriteLine($"Las horas faltantes son: {horasFaltantes}");
+    }
+
     //Creamos un metodo que pida el nombre y apellido del usuario y posteriormente lo salude con "Bienvenido [Apellido], [Nombre]
     private static void PedirNombreYSaludar()
     {
@@ -111,6 +255,9 @@ internal class Program
     // 3) Leer tres valores que corresponden a un día, un mes y un año y 
     // determinar si se trata de una fecha válida o no.
 
+
+    //corregir con los bisisestos, con 30 , 31
+
     private static void FechaValida()
     {
         int dia, mes, año;
@@ -151,8 +298,4 @@ internal class Program
         }
 
     }
-
-
-
-
 }
