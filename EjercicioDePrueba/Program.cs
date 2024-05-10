@@ -1,4 +1,5 @@
 ﻿
+using EjercicioDePrueba.Clases;
 using System.ComponentModel.Design;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
@@ -11,11 +12,70 @@ internal class Program
         // CalcualarDiasDeVida();
         //ImprimirMinimoDe4();
         //TipodeTriangulo();
-        //FechaValida();
         //HorasQueFaltanTrabajar();
-        fechavalida2();
+        //fechavalida2();
+        //calcularValorPago();
+        //pruebaDeObjetoSplit();
+        pruebaDeObjetoPersonas();
     }
 
+    private static void pruebaDeObjetoPersonas()
+    {
+        Persona Albert = new Persona("Albert Einstein", "9 De Julio 2222", 1879);
+        Persona Robert = new Persona("Robert Oppenheimer", "Manhttan 1111", 1904 );
+
+        Robert.Decir("Albert, sabes como se despiden los quimicos?");
+        Albert.Decir("No, ni idea.");
+        Robert.Decir("Acido un placer :)");
+    }
+
+    private static void pruebaDeObjetoSplit()
+    {
+        //instanciamos el objeto Split
+        Split miSplit = new Split("Blanco", 3000, "Marshall");
+        miSplit.SubirTemperatura();
+        miSplit.SubirTemperatura();
+        miSplit.PresionarBotonEncendido();
+        miSplit.CambiarModo("Deshumidificacion");
+        miSplit.SubirTemperatura();
+        Console.WriteLine("El modo definido del split es: " + miSplit.modo);
+    }
+
+    private static void calcularValorPago()
+    {
+        double valorCuota;
+        int nroDia;
+
+        Console.Write("Ingrese el valor de la cuota: ");
+        valorCuota = double.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el dia de pago: ");
+        nroDia = int.Parse(Console.ReadLine());
+
+        switch (nroDia)
+        {
+            case < 3:
+                valorCuota = valorCuota - (valorCuota * 0.03);
+                break;
+
+            case >= 6 and <= 10:
+                valorCuota = valorCuota + (valorCuota * 0.1);
+                break;
+
+            case >= 11 and <= 20:
+                valorCuota = valorCuota + (valorCuota * 0.12);
+                break;
+
+            case >= 21 and <= 31:
+                valorCuota = valorCuota + (valorCuota * 0.15);
+                break;
+        }
+
+        Console.WriteLine(valorCuota);
+    }
+
+    // 3) Leer tres valores que corresponden a un día, un mes y un año y 
+    // determinar si se trata de una fecha válida o no.
     private static void fechavalida2()
     {
         int dia, mes, año;
@@ -42,12 +102,10 @@ internal class Program
             {
                 if (dia <= 30)
                 {
-                    Console.WriteLine("El dia es valido!");
                     DiaValido = true;
                 }
                 else
                 {
-                    Console.WriteLine("El dia invalido!");
                     DiaValido = false;
                 }
             }
@@ -59,12 +117,10 @@ internal class Program
                     {
                         if (dia > 29)
                         {
-                            Console.WriteLine("Tu dia es invalido!");
                             DiaValido = false;
                         }
                         else
                         {
-                            Console.WriteLine("Tu dia es valido!");
                             DiaValido = true;
                         }
                     }
@@ -72,12 +128,10 @@ internal class Program
                     {
                         if (dia <= 28)
                         {
-                            Console.WriteLine("Tu dia es valido!");
                             DiaValido = true;
                         }
                         else
                         {
-                            Console.WriteLine("Tu dia es invalido!");
                             DiaValido = false;
                         }
                     }
@@ -86,12 +140,10 @@ internal class Program
                 {
                     if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
                     {
-                        Console.WriteLine("El dia valido!");
                         DiaValido = true;
                     }
                     else
                     {
-                        Console.WriteLine("El dia invalido!");
                         DiaValido = false;
                     }
                    
@@ -100,29 +152,24 @@ internal class Program
         }
         else
         {
-            Console.WriteLine("El dia es invalido!");
             DiaValido = false;
         }
 
         if (mes >= 1 && mes <= 12)
         {
-            Console.WriteLine("El mes es valido!");
             MesValido = true;
         }
         else
-        { 
-            Console.WriteLine("El mes es invalido!");
+        {
             MesValido = false;
         }
 
         if (año >= 1)
         {
-            Console.WriteLine("Es un año valido");
             AñoValido = true;
         }
         else
         {
-            Console.WriteLine("Es un año invalido!");
             AñoValido = false;
         }
 
@@ -250,52 +297,5 @@ internal class Program
         {
             Console.WriteLine("El Triangulo es Escaleno");
         }
-    }
-
-    // 3) Leer tres valores que corresponden a un día, un mes y un año y 
-    // determinar si se trata de una fecha válida o no.
-
-
-    //corregir con los bisisestos, con 30 , 31
-
-    private static void FechaValida()
-    {
-        int dia, mes, año;
-
-        Console.Write("Ingrese un dia: ");
-        dia = int.Parse(Console.ReadLine());
-
-        Console.Write("Ingrese el numero de un mes: ");
-        mes = int.Parse(Console.ReadLine());
-
-        Console.Write("Ingrese un año: ");
-        año = int.Parse(Console.ReadLine());
-
-        bool Valida = true;
-
-        if (dia < 1 || dia > 31)
-        {
-            Console.WriteLine("No es un dia valido");
-            Valida = false;
-        }
-        else if (mes < 1 || mes > 12)
-        {
-            Console.WriteLine("No es un mes valido");
-            Valida = false;
-        } else if (año <= 0)
-        {
-            Console.WriteLine("No es un año valido");
-            Valida = false;
-        }
-
-        if (Valida)
-        {
-            Console.WriteLine("La fecha ingresada es válida.");
-        }
-        else
-        {
-            Console.WriteLine("La fecha ingresada no es válida.");
-        }
-
     }
 }
