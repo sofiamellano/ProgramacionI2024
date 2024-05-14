@@ -1,5 +1,6 @@
 ﻿
 using EjercicioDePrueba.Clases;
+using EjercicioDePrueba.Enums;
 using System.ComponentModel.Design;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
@@ -16,8 +17,25 @@ internal class Program
         //fechavalida2();
         //calcularValorPago();
         //pruebaDeObjetoSplit();
-        pruebaDeObjetoPersonas();
+        //pruebaDeObjetoPersonas();
+        //pruebaDeObjetoPavaElectrica();
+        PruebaPavaElectrica();
     }
+
+    private static void PruebaPavaElectrica()
+    {
+        PavaElectrica miPava = new PavaElectrica("Liliana", "Plateado", "Acero inoxidable");
+        miPava.PresionarBotonEncendido();
+        miPava.CambiarModo(ModoEnum.Maximo);
+        miPava.CalentarAgua();
+        Console.WriteLine($"La pava está en modo {miPava.Modo}");
+        Thread.Sleep(2000);
+        miPava.PresionarBotonEncendido();
+        miPava.CambiarModo(ModoEnum.Minimo);
+        miPava.CalentarAgua();
+        Console.WriteLine($"La pava está en modo {miPava.Modo}");
+    }
+   
 
     private static void pruebaDeObjetoPersonas()
     {
