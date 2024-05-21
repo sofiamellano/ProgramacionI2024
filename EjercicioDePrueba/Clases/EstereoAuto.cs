@@ -94,6 +94,7 @@ namespace EjercicioDePrueba.Clases
             }
         }
 
+        //metodo que muestra el display del estereo
         public void Display()
         {
             if (encendido)
