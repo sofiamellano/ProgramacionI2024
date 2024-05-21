@@ -20,7 +20,25 @@ internal class Program
         //pruebaDeObjetoPersonas();
         //pruebaDeObjetoPavaElectrica();
         //PruebaPavaElectrica();
-        PruebaEsteroAuto();
+        //PruebaEsteroAuto();
+        //PruebaDeClasesAbstractasYHerencia();
+        PruebaCalculadoraPasajePorReferencia();
+    }
+
+    private static void PruebaCalculadoraPasajePorReferencia()
+    {
+        int a = 123;
+        int b = 10;
+        int total = 0;
+        Calculadora calculadora = new Calculadora();
+        calculadora.Sumar(a, b, ref total);
+        Console.WriteLine($"La suma total es: {total}");
+    }
+
+    private static void PruebaDeClasesAbstractasYHerencia()
+    {
+        Gerente Juan = new Gerente("Juan" , "Gonzalez"); 
+        Console.WriteLine(Juan.ImprimirDatos());
     }
 
     private static void PruebaEsteroAuto()
@@ -40,10 +58,6 @@ internal class Program
         miEstereo.SeleccionarDispositivoAuxiliar("Celu");
         miEstereo.Display();
         miEstereo.BotonEncender();
-        miEstereo.Display();
-
-
-
     }
 
     private static void PruebaPavaElectrica()

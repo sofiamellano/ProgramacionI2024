@@ -14,30 +14,30 @@ namespace EjercicioDePrueba.Clases
         private string marca;
 
         // Propiedades
-        public bool encendido;
-        public ModoEstereo modo;
-        public double frecuencia;
-        public string cancion;
-        public int pistaCD;
-        public string dispositivoAuxiliar;
+        public bool Encendido;
+        public ModoEstereo Modo;
+        public double Frecuencia;
+        public string Cancion;
+        public int PistaCD;
+        public string DispositivoAuxiliar;
 
         //constructor
         public EstereoAuto(string color, string marca, double frecuencia, string cancion, int pistaCD, string dispositivoAuxiliar)
         {
-            this.encendido = false;
-            this.modo = ModoEstereo.Radio;
-            this.frecuencia = frecuencia;
-            this.cancion = cancion;
-            this.pistaCD = pistaCD;
-            this.color = color; 
+            this.Encendido = false;
+            this.Modo = ModoEstereo.Radio;
+            this.Frecuencia = frecuencia;
+            this.Cancion = cancion;
+            this.PistaCD = pistaCD;
+            this.color = color;
             this.marca = marca;
-            this.dispositivoAuxiliar = dispositivoAuxiliar;
+            this.DispositivoAuxiliar = dispositivoAuxiliar;
         }
 
         public void BotonEncender()
         {
-            this.encendido = !encendido;
-            if (encendido)
+            this.Encendido = !Encendido;
+            if (Encendido)
                 Console.WriteLine("El estéreo está encendido.");
             else
                 Console.WriteLine("El estéreo está apagado.");
@@ -46,20 +46,20 @@ namespace EjercicioDePrueba.Clases
 
         public void CambiarModo(ModoEstereo nuevoModo)
         {
-            if (this.encendido)
+            if (this.Encendido)
             {
-                this.modo = nuevoModo;
-                Console.WriteLine($"Modo {nuevoModo} seleccionado.");
+                this.Modo = nuevoModo;
+                //Console.WriteLine($"Modo {nuevoModo} seleccionado.");
             }
             else
                 Console.WriteLine("Error: El estereo debe estar encencido!");
         }
 
-        public void ElegirRadio (double nuevaFrecuencia)
+        public void ElegirRadio(double nuevaFrecuencia)
         {
-            if (this.modo == ModoEstereo.Radio)
+            if (this.Modo == ModoEstereo.Radio)
             {
-                this.frecuencia = nuevaFrecuencia;
+                this.Frecuencia = nuevaFrecuencia;
                 Console.WriteLine($"Frecuencia de radio elejida: {nuevaFrecuencia}");
             }
             else
@@ -68,12 +68,12 @@ namespace EjercicioDePrueba.Clases
             }
         }
 
-        public void ElegirCancion (string nuevaCancion)
+        public void ElegirCancion(string nuevaCancion)
         {
-            if (this.modo == ModoEstereo.Bluetooth)
+            if (this.Modo == ModoEstereo.Bluetooth)
             {
-                this.cancion = nuevaCancion;
-                Console.WriteLine($"Reproduciendo la canción: {nuevaCancion}");
+                this.Cancion = nuevaCancion;
+                //Console.WriteLine($"Reproduciendo la canción: {nuevaCancion}");
             }
             else
             {
@@ -81,12 +81,12 @@ namespace EjercicioDePrueba.Clases
             }
         }
 
-        public void ElegirPista (int nuevaPista)
+        public void ElegirPista(int nuevaPista)
         {
-            if (this.modo == ModoEstereo.CD)
+            if (this.Modo == ModoEstereo.CD)
             {
-                this.pistaCD = nuevaPista;
-                Console.WriteLine($"Reproduciendo la pista número: {nuevaPista}");
+                this.PistaCD = nuevaPista;
+                //Console.WriteLine($"Reproduciendo la pista número: {nuevaPista}");
             }
             else
             {
@@ -94,26 +94,40 @@ namespace EjercicioDePrueba.Clases
             }
         }
 
+        public void SeleccionarDispositivoAuxiliar(string nuevoDispositivo)
+        {
+            if (this.Modo == ModoEstereo.Auxiliar)
+            {
+                this.DispositivoAuxiliar = nuevoDispositivo;
+                //Console.WriteLine($"Dispositivo auxiliar conectado: {nuevoDispositivo}");
+            }
+            else
+            {
+                Console.WriteLine("Error: El modo actual no es Auxiliar.");
+            }
+        }
+    
         //metodo que muestra el display del estereo
         public void Display()
         {
-            if (encendido)
+            Console.WriteLine("********************");
+            if (Encendido)
             {
-                if (modo == ModoEstereo.Radio)
+                if (Modo == ModoEstereo.Radio)
                 {
-                    Console.WriteLine($"Modo: Radio, Frecuencia: {frecuencia} FM");
+                    Console.WriteLine($"Modo: Radio, Frecuencia: {Frecuencia} FM");
                 }
-                else if (modo == ModoEstereo.Bluetooth)
+                else if (Modo == ModoEstereo.Bluetooth)
                 {
-                    Console.WriteLine($"Modo: Bluetooth, Canción: {cancion}");
+                    Console.WriteLine($"Modo: Bluetooth, Canción: {Cancion}");
                 }
-                else if (modo == ModoEstereo.CD)
+                else if (Modo == ModoEstereo.CD)
                 {
-                    Console.WriteLine($"Modo: CD, Pista: {pistaCD}");
+                    Console.WriteLine($"Modo: CD, Pista: {PistaCD}");
                 }
-                else if (modo == ModoEstereo.Auxiliar)
+                else if (Modo == ModoEstereo.Auxiliar)
                 {
-                    Console.WriteLine($"Modo: Auxiliar, Dispositivo: {dispositivoAuxiliar}");
+                    Console.WriteLine($"Modo: Auxiliar, Dispositivo: {DispositivoAuxiliar}");
                 }
                 else
                 {
@@ -124,19 +138,9 @@ namespace EjercicioDePrueba.Clases
             {
                 Console.WriteLine("El estéreo está apagado.");
             }
-        }
-
-        public void SeleccionarDispositivoAuxiliar(string nuevoDispositivo)
-        {
-            if (this.modo == ModoEstereo.Auxiliar)
-            {
-                this.dispositivoAuxiliar = nuevoDispositivo;
-                Console.WriteLine($"Dispositivo auxiliar conectado: {nuevoDispositivo}");
-            }
-            else
-            {
-                Console.WriteLine("Error: El modo actual no es Auxiliar.");
-            }
+            Console.WriteLine("********************");
+            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }
