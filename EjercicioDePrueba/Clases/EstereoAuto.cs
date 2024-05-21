@@ -21,6 +21,7 @@ namespace EjercicioDePrueba.Clases
         public int pistaCD;
         public string dispositivoAuxiliar;
 
+        //constructor
         public EstereoAuto(string color, string marca, double frecuencia, string cancion, int pistaCD, string dispositivoAuxiliar)
         {
             this.encendido = false;
