@@ -19,7 +19,31 @@ internal class Program
         //pruebaDeObjetoSplit();
         //pruebaDeObjetoPersonas();
         //pruebaDeObjetoPavaElectrica();
-        PruebaPavaElectrica();
+        //PruebaPavaElectrica();
+        PruebaEsteroAuto();
+    }
+
+    private static void PruebaEsteroAuto()
+    {
+        EstereoAuto miEstereo = new EstereoAuto("negro", "Sony", 101.1, "Textos Frios", 5,"Celu");
+        miEstereo.BotonEncender();
+        miEstereo.CambiarModo(ModoEstereo.Radio);
+        miEstereo.ElejirRadio(97.7);
+        miEstereo.Display();
+        miEstereo.CambiarModo(ModoEstereo.Bluetooth);
+        miEstereo.ElejirCancion("La Vida Moderna");
+        miEstereo.Display();
+        miEstereo.CambiarModo(ModoEstereo.CD);
+        miEstereo.ElejirPista(10);
+        miEstereo.Display();
+        miEstereo.CambiarModo(ModoEstereo.Auxiliar);
+        miEstereo.SeleccionarDispositivoAuxiliar("Celu");
+        miEstereo.Display();
+        miEstereo.BotonEncender();
+        miEstereo.Display();
+
+
+
     }
 
     private static void PruebaPavaElectrica()
