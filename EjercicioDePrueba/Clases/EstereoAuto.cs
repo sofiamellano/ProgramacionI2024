@@ -55,7 +55,7 @@ namespace EjercicioDePrueba.Clases
                 Console.WriteLine("Error: El estereo debe estar encencido!");
         }
 
-        public void ElejirRadio (double nuevaFrecuencia)
+        public void ElegirRadio (double nuevaFrecuencia)
         {
             if (this.modo == ModoEstereo.Radio)
             {
@@ -68,7 +68,7 @@ namespace EjercicioDePrueba.Clases
             }
         }
 
-        public void ElejirCancion (string nuevaCancion)
+        public void ElegirCancion (string nuevaCancion)
         {
             if (this.modo == ModoEstereo.Bluetooth)
             {
@@ -81,7 +81,7 @@ namespace EjercicioDePrueba.Clases
             }
         }
 
-        public void ElejirPista (int nuevaPista)
+        public void ElegirPista (int nuevaPista)
         {
             if (this.modo == ModoEstereo.CD)
             {
