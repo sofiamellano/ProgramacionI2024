@@ -5,16 +5,16 @@ using System.ComponentModel.Design;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
 
-internal class Program
+public class ProgramEjercicios
 {
     private static void Main(string[] args)
     {
         // PedirNombreYSaludar();
-        // CalcualarDiasDeVida();
+       // CalcualarDiasDeVida();
         //ImprimirMinimoDe4();
         //TipodeTriangulo();
         //HorasQueFaltanTrabajar();
-        //fechavalida2();
+        //fechavalida();
         //calcularValorPago();
         //pruebaDeObjetoSplit();
         //pruebaDeObjetoPersonas();
@@ -22,7 +22,9 @@ internal class Program
         //PruebaPavaElectrica();
         //PruebaEsteroAuto();
         //PruebaDeClasesAbstractasYHerencia();
-        PruebaCalculadoraPasajePorReferencia();
+        //PruebaCalculadoraPasajePorReferencia();
+        //Console.WriteLine(ControlFechaValida(28,02,2023));
+        //Console.WriteLine(CalcualarDiasDeVida(1, 1, 1));
     }
 
     private static void PruebaCalculadoraPasajePorReferencia()
@@ -132,7 +134,7 @@ internal class Program
 
     // 3) Leer tres valores que corresponden a un día, un mes y un año y 
     // determinar si se trata de una fecha válida o no.
-    private static void fechavalida2()
+    private static void fechavalida()
     {
         int dia, mes, año;
         bool DiaValido = true;
@@ -275,7 +277,6 @@ internal class Program
     }
 
     //Creamos un metodo que nos pida los años, meses y dias de vida y muestre al final la cantidad y total de dias de vida
-
     private static void CalcualarDiasDeVida()
     {
         //Declaramos las variables
@@ -293,6 +294,10 @@ internal class Program
         diasDeVida = (años * 365) + (meses * 30) + dias;
 
         Console.WriteLine($"Los dias de vida totales son: {diasDeVida}");
+    }
+    public static int CalcualarDiasDeVida(int años, int meses, int dias)
+    {
+        return (años * 365) + (meses * 30) + dias;
     }
 
     private static void ImprimirMinimoDe4()
@@ -353,5 +358,38 @@ internal class Program
         {
             Console.WriteLine("El Triangulo es Escaleno");
         }
+    }
+    public static string Triangulo(int lado1, int lado2, int lado3)
+    {
+        if (lado1 == lado2 && lado2 == lado3)
+        {
+            return "Equilatero";
+        }
+        else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3)
+        {
+            return "Isosceles";
+        }
+        else
+        {
+            return "Escaleno";
+        }
+    }
+
+    public static bool ControlFechaValida(int dia, int mes, int año)
+    {
+        if ((dia >= 1 && dia <= 31) && (mes == 1 || mes == 3 ||
+                mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12))
+            return true;
+
+        else if ((dia >= 1 && dia <= 30) && (mes == 4 || mes == 6 || mes == 9 || mes == 11))
+            return true;
+
+        else if ((dia == 29) && (mes == 2) && (año % 4 == 0) || (dia >= 1 && dia <= 28) && (mes == 2))
+
+            return true;
+
+        else
+            return false;
+
     }
 }
