@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioDePrueba", "EjercicioDePrueba\EjercicioDePrueba.csproj", "{1AA9A826-6BEF-407D-93DA-B7F2BA4DC5E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectApp", "TestProjectApp\TestProjectApp.csproj", "{DB93D8A7-62D1-4403-9A69-8AD4DD7F8034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjectApp", "TestProjectApp\TestProjectApp.csproj", "{DB93D8A7-62D1-4403-9A69-8AD4DD7F8034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksDesktops", "BooksDesktops\BooksDesktops.csproj", "{9514D644-68F3-4931-BEB6-5C4B3FB18403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DB93D8A7-62D1-4403-9A69-8AD4DD7F8034}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB93D8A7-62D1-4403-9A69-8AD4DD7F8034}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB93D8A7-62D1-4403-9A69-8AD4DD7F8034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9514D644-68F3-4931-BEB6-5C4B3FB18403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9514D644-68F3-4931-BEB6-5C4B3FB18403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9514D644-68F3-4931-BEB6-5C4B3FB18403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9514D644-68F3-4931-BEB6-5C4B3FB18403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

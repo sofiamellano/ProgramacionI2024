@@ -23,13 +23,13 @@ namespace TestProjectApp
         public void TestIsosceles()
         {
             string result = ProgramEjercicios.Triangulo(1, 1, 2);
-            Assert.That(result, Is.EqualTo("Equilatero"));
+            Assert.That(result, Is.EqualTo("Isosceles"));
         }
         [Test]
         public void TestEscaleno()
         {
             string result = ProgramEjercicios.Triangulo(1, 2, 3);
-            Assert.That(result, Is.EqualTo("Equilatero"));
+            Assert.That(result, Is.EqualTo("Escaleno"));
         }
     }
 }
