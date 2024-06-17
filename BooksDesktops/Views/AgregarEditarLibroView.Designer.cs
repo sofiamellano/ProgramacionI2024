@@ -44,7 +44,9 @@
             numericPages = new NumericUpDown();
             btnSave = new Button();
             btnCancel = new Button();
+            pictureBoxPortada = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericPages).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPortada).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -93,7 +95,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(13, 228);
+            label5.Location = new Point(13, 336);
             label5.Name = "label5";
             label5.Size = new Size(53, 15);
             label5.TabIndex = 5;
@@ -102,7 +104,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 284);
+            label6.Location = new Point(12, 392);
             label6.Name = "label6";
             label6.Size = new Size(51, 15);
             label6.TabIndex = 6;
@@ -111,7 +113,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 331);
+            label7.Location = new Point(12, 439);
             label7.Name = "label7";
             label7.Size = new Size(48, 15);
             label7.TabIndex = 7;
@@ -140,7 +142,7 @@
             // 
             // txtSinopsis
             // 
-            txtSinopsis.Location = new Point(88, 205);
+            txtSinopsis.Location = new Point(88, 327);
             txtSinopsis.Multiline = true;
             txtSinopsis.Name = "txtSinopsis";
             txtSinopsis.Size = new Size(363, 57);
@@ -148,14 +150,14 @@
             // 
             // txtGenero
             // 
-            txtGenero.Location = new Point(88, 328);
+            txtGenero.Location = new Point(88, 436);
             txtGenero.Name = "txtGenero";
             txtGenero.Size = new Size(363, 23);
             txtGenero.TabIndex = 13;
             // 
             // numericPages
             // 
-            numericPages.Location = new Point(88, 282);
+            numericPages.Location = new Point(88, 392);
             numericPages.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericPages.Name = "numericPages";
             numericPages.Size = new Size(130, 23);
@@ -164,7 +166,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(143, 386);
+            btnSave.Location = new Point(143, 475);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 15;
@@ -174,18 +176,29 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(292, 386);
+            btnCancel.Location = new Point(281, 475);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 16;
             btnCancel.Text = "&Cancelar";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // pictureBoxPortada
+            // 
+            pictureBoxPortada.Location = new Point(192, 197);
+            pictureBoxPortada.Name = "pictureBoxPortada";
+            pictureBoxPortada.Size = new Size(122, 124);
+            pictureBoxPortada.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxPortada.TabIndex = 17;
+            pictureBoxPortada.TabStop = false;
             // 
             // AgregarEditarLibroView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(514, 502);
+            ClientSize = new Size(525, 551);
+            Controls.Add(pictureBoxPortada);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(numericPages);
@@ -206,6 +219,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "Agregar/EditarLibro";
             ((System.ComponentModel.ISupportInitialize)numericPages).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPortada).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -228,5 +242,6 @@
         private NumericUpDown numericPages;
         private Button btnSave;
         private Button btnCancel;
+        private PictureBox pictureBoxPortada;
     }
 }

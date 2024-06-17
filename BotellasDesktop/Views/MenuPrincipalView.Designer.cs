@@ -1,4 +1,4 @@
-﻿namespace BooksDesktops
+﻿namespace BotellasDesktop
 {
     partial class MenuPrincipalView
     {
@@ -30,7 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             principalToolStripMenuItem = new ToolStripMenuItem();
-            librosToolStripMenuItem = new ToolStripMenuItem();
+            botellasToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,17 +45,17 @@
             // 
             // principalToolStripMenuItem
             // 
-            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { librosToolStripMenuItem });
+            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { botellasToolStripMenuItem });
             principalToolStripMenuItem.Name = "principalToolStripMenuItem";
             principalToolStripMenuItem.Size = new Size(65, 20);
             principalToolStripMenuItem.Text = "Principal";
             // 
-            // librosToolStripMenuItem
+            // botellasToolStripMenuItem
             // 
-            librosToolStripMenuItem.Name = "librosToolStripMenuItem";
-            librosToolStripMenuItem.Size = new Size(106, 22);
-            librosToolStripMenuItem.Text = "Libros";
-            librosToolStripMenuItem.Click += librosToolStripMenuItem_Click;
+            botellasToolStripMenuItem.Name = "botellasToolStripMenuItem";
+            botellasToolStripMenuItem.Size = new Size(115, 22);
+            botellasToolStripMenuItem.Text = "Botellas";
+            botellasToolStripMenuItem.Click += botellasToolStripMenuItem_Click;
             // 
             // MenuPrincipalView
             // 
@@ -67,7 +67,7 @@
             MainMenuStrip = menuStrip1;
             Name = "MenuPrincipalView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Books Desktop 1.0 Sofi Mellano";
+            Text = "Botellas Desktop";
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -79,6 +79,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem principalToolStripMenuItem;
-        private ToolStripMenuItem librosToolStripMenuItem;
+        private ToolStripMenuItem botellasToolStripMenuItem;
     }
 }

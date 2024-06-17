@@ -38,14 +38,19 @@
             // 
             // dataGridLibros
             // 
+            dataGridLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridLibros.Location = new Point(41, 30);
             dataGridLibros.Name = "dataGridLibros";
+            dataGridLibros.ReadOnly = true;
+            dataGridLibros.RowHeadersVisible = false;
+            dataGridLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridLibros.Size = new Size(715, 340);
             dataGridLibros.TabIndex = 0;
             // 
             // btnAdd
             // 
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnAdd.Location = new Point(58, 403);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
@@ -56,24 +61,29 @@
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnDelete.Location = new Point(334, 403);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 2;
             btnDelete.Text = "El&iminar";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnEdit.Location = new Point(203, 403);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(75, 23);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "&Editar";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnClose
             // 
+            btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnClose.Location = new Point(725, 427);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(75, 23);
@@ -87,11 +97,15 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
             Controls.Add(btnClose);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Controls.Add(dataGridLibros);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "GestionLibrosView";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Gestion de Libros";
