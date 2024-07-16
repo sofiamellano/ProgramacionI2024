@@ -31,6 +31,9 @@
             menuStrip1 = new MenuStrip();
             principalToolStripMenuItem = new ToolStripMenuItem();
             gestionDeClientesToolStripMenuItem = new ToolStripMenuItem();
+            gestionDeEmpleadosToolStripMenuItem = new ToolStripMenuItem();
+            gestionDeProductosToolStripMenuItem = new ToolStripMenuItem();
+            gestionDeTipoDeProductoToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             salirDelSistemaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
@@ -47,7 +50,7 @@
             // 
             // principalToolStripMenuItem
             // 
-            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem });
+            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem });
             principalToolStripMenuItem.Name = "principalToolStripMenuItem";
             principalToolStripMenuItem.Size = new Size(65, 20);
             principalToolStripMenuItem.Text = "Principal";
@@ -55,9 +58,30 @@
             // gestionDeClientesToolStripMenuItem
             // 
             gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
-            gestionDeClientesToolStripMenuItem.Size = new Size(180, 22);
+            gestionDeClientesToolStripMenuItem.Size = new Size(224, 22);
             gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
             gestionDeClientesToolStripMenuItem.Click += gestionDeClientesToolStripMenuItem_Click;
+            // 
+            // gestionDeEmpleadosToolStripMenuItem
+            // 
+            gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
+            gestionDeEmpleadosToolStripMenuItem.Size = new Size(224, 22);
+            gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
+            gestionDeEmpleadosToolStripMenuItem.Click += gestionDeEmpleadosToolStripMenuItem_Click;
+            // 
+            // gestionDeProductosToolStripMenuItem
+            // 
+            gestionDeProductosToolStripMenuItem.Name = "gestionDeProductosToolStripMenuItem";
+            gestionDeProductosToolStripMenuItem.Size = new Size(224, 22);
+            gestionDeProductosToolStripMenuItem.Text = "Gestion de Productos";
+            gestionDeProductosToolStripMenuItem.Click += gestionDeProductosToolStripMenuItem_Click;
+            // 
+            // gestionDeTipoDeProductoToolStripMenuItem
+            // 
+            gestionDeTipoDeProductoToolStripMenuItem.Name = "gestionDeTipoDeProductoToolStripMenuItem";
+            gestionDeTipoDeProductoToolStripMenuItem.Size = new Size(224, 22);
+            gestionDeTipoDeProductoToolStripMenuItem.Text = "Gestion de Tipo de Producto";
+            gestionDeTipoDeProductoToolStripMenuItem.Click += gestionDeTipoDeProductoToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
@@ -97,5 +121,8 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem salirDelSistemaToolStripMenuItem;
         private ToolStripMenuItem gestionDeClientesToolStripMenuItem;
+        private ToolStripMenuItem gestionDeEmpleadosToolStripMenuItem;
+        private ToolStripMenuItem gestionDeProductosToolStripMenuItem;
+        private ToolStripMenuItem gestionDeTipoDeProductoToolStripMenuItem;
     }
 }

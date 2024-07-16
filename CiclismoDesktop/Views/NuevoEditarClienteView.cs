@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CiclismoDesktopPorCodigo.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,24 +16,20 @@ namespace CiclismoDesktopPorCodigo.Views
 {
     public partial class NuevoEditarClienteView : Form
     {
-
-        string connectionString = "server=.\\SQLEXPRESS; database=Ciclismo2; user id=sa; password=123; multipleactiveresultsets=true; Encrypt=false";
-
         SqlCommand comand = new SqlCommand();
 
-        SqlConnection conex;
         private int? idClienteEdit;
 
         public NuevoEditarClienteView()
         {
             InitializeComponent();
-            AbrirConexion();
+            comand.Connection = Helper.CrearConexion();
         }
 
         public NuevoEditarClienteView(int idClienteEdit)
         {
             InitializeComponent();
-            AbrirConexion();
+            comand.Connection = Helper.CrearConexion();
             this.idClienteEdit = idClienteEdit;
             cargarDatosAPantalla();
         }
@@ -50,13 +48,6 @@ namespace CiclismoDesktopPorCodigo.Views
                 }
             }
             clienteReader?.Close();
-        }
-
-        private void AbrirConexion()
-        {
-            conex = new SqlConnection(this.connectionString);
-            conex.Open();
-            comand.Connection = conex;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

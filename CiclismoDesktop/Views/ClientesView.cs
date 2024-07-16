@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CiclismoDesktopPorCodigo.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,26 +16,15 @@ namespace CiclismoDesktopPorCodigo.Views
     public partial class ClientesView : Form
     {
         // establecemos conexion
-        string connectionString = "server=.\\SQLEXPRESS; database=Ciclismo2; user id=sa; password=123; multipleactiveresultsets=true; Encrypt=false";
-
+       
         SqlCommand comand = new SqlCommand();
-
-        SqlConnection conex;
         public ClientesView()
         {
             InitializeComponent();
-            AbrirConexion();
+            comand.Connection = Helper.CrearConexion();
             CargarDatosAGrilla();
 
         }
-
-        private void AbrirConexion()
-        {
-            conex = new SqlConnection(this.connectionString);
-            conex.Open();
-            comand.Connection = conex;
-        }
-
         private void CargarDatosAGrilla()
         {
             // comando a ejecutar y ejecutado, resultado queda en sqlDatareader
