@@ -36,9 +36,9 @@
             btnCancelar = new Button();
             numericUpDown = new NumericUpDown();
             txtImgUrl = new TextBox();
-            picturePortada = new PictureBox();
+            pictureBoxBotellas = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picturePortada).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBotellas).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -114,21 +114,21 @@
             txtImgUrl.Size = new Size(282, 23);
             txtImgUrl.TabIndex = 8;
             // 
-            // picturePortada
+            // pictureBoxBotellas
             // 
-            picturePortada.Location = new Point(158, 176);
-            picturePortada.Name = "picturePortada";
-            picturePortada.Size = new Size(179, 140);
-            picturePortada.SizeMode = PictureBoxSizeMode.Zoom;
-            picturePortada.TabIndex = 9;
-            picturePortada.TabStop = false;
+            pictureBoxBotellas.Location = new Point(183, 177);
+            pictureBoxBotellas.Name = "pictureBoxBotellas";
+            pictureBoxBotellas.Size = new Size(127, 148);
+            pictureBoxBotellas.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxBotellas.TabIndex = 9;
+            pictureBoxBotellas.TabStop = false;
             // 
             // AgregarEditarBotellasView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(460, 449);
-            Controls.Add(picturePortada);
+            Controls.Add(pictureBoxBotellas);
             Controls.Add(txtImgUrl);
             Controls.Add(numericUpDown);
             Controls.Add(btnCancelar);
@@ -141,7 +141,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "Agregar/Editar Botellas";
             ((System.ComponentModel.ISupportInitialize)numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picturePortada).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBotellas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,6 +156,6 @@
         private Button btnCancelar;
         private NumericUpDown numericUpDown;
         private TextBox txtImgUrl;
-        private PictureBox picturePortada;
+        private PictureBox pictureBoxBotellas;
     }
 }

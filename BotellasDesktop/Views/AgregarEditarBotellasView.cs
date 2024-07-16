@@ -38,7 +38,7 @@ namespace BotellasDesktop.Views
                 txtTipo.Text = botellas.tipo;
                 txtImgUrl.Text = botellas.imgUrl;
                 numericUpDown.Value = (decimal)botellas.Lts_ml;
-                picturePortada.ImageLocation = botellas.imgUrl;
+                pictureBoxBotellas.ImageLocation = botellas.imgUrl;
             }
             else
                 MessageBox.Show("ERROR! No se encontro la botella");
