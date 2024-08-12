@@ -37,5 +37,11 @@ namespace CiclismoDesktop
             TipoDeProductoView tipoDeProductoView = new TipoDeProductoView();
             tipoDeProductoView.ShowDialog();
         }
+
+        private void gestionDeClientesStoredProceduresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientesStoredProceduresView clientesStoreProceduresView = new ClientesStoredProceduresView();
+            clientesStoreProceduresView.ShowDialog();
+        }
     }
 }
