@@ -96,6 +96,7 @@
             Controls.Add(btnAgregar);
             Controls.Add(dataGridClientes);
             Name = "ClientesStoredProceduresView";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "ClientesStoreProceduresView";
             ((System.ComponentModel.ISupportInitialize)dataGridClientes).EndInit();
             ResumeLayout(false);

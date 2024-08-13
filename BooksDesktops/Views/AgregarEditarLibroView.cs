@@ -14,48 +14,52 @@ namespace BooksDesktops.Views
 {
     public partial class AgregarEditarLibroView : Form
     {
-        private string idbookselected;
         BooksRepo repo = new BooksRepo();
+        private Book book;
 
+        //nuevo
         public AgregarEditarLibroView()
         {
             InitializeComponent();
+            this.book = new Book();
         }
-        //constructor que recibe el id como cparametro
-        public AgregarEditarLibroView(string idbookselected)
+
+        //editar
+        public AgregarEditarLibroView(Book book)
         {
-            this.idbookselected = idbookselected;
+            this.book = book;
             InitializeComponent();
             CargarLibroAPantalla();
         }
 
-        private async void CargarLibroAPantalla()
+        private void CargarLibroAPantalla()
         {
-            Book? book = await repo.GetById(this.idbookselected);
-            if (book != null)
-            {
                 txtName.Text = book.nombre;
                 txtAutor.Text = book.autor;
                 txtEditorial.Text = book.editorial;
-                txtPortadaUrl.Text = book.portada_url;
                 txtGenero.Text = book.genero;
                 txtSinopsis.Text = book.sinopsis;
                 numericPages.Value = book.paginas;
                 pictureBoxPortada.ImageLocation = book.portada_url;
-            }
-            else
-                MessageBox.Show("Error no se encontro el libro!");
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (this.idbookselected != null)
+            this.book.nombre = txtName.Text;
+            this.book.autor = txtAutor.Text;
+            this.book.editorial = txtEditorial.Text;
+            this.book.portada_url = pictureBoxPortada.ImageLocation;
+            this.book.genero = txtGenero.Text;
+            this.book.sinopsis = txtSinopsis.Text;
+            this.book.paginas = (int)numericPages.Value;
+
+            if (this.book._id != null)
             {
-                await repo.UpdateAsync(txtName.Text, txtAutor.Text, txtEditorial.Text, txtPortadaUrl.Text, txtSinopsis.Text, (int)numericPages.Value, txtGenero.Text, this.idbookselected);
+                await repo.UpdateAsync(this.book);
             }
             else
             {
-                await repo.AddAsync(txtName.Text, txtAutor.Text, txtEditorial.Text, txtPortadaUrl.Text, txtSinopsis.Text, (int)numericPages.Value, txtGenero.Text);
+                await repo.AddAsync(this.book);
             }
             this.Close();
         }
