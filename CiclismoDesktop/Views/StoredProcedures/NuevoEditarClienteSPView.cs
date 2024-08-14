@@ -21,19 +21,20 @@ namespace CiclismoDesktopPorCodigo.Views
         {
             InitializeComponent();
             comand.Connection = Helper.CrearConexion();
+            comand.CommandType = CommandType.StoredProcedure;
         }
 
         public NuevoEditarClienteSPView(int idClienteEdit)
         {
             InitializeComponent();
             comand.Connection = Helper.CrearConexion();
+            comand.CommandType = CommandType.StoredProcedure;
             this.idClienteEdit = idClienteEdit;
             cargarDatosAPantalla();
         }
 
         private void cargarDatosAPantalla()
-        {
-            comand.CommandType = CommandType.StoredProcedure;
+        {            
             comand.Parameters.Clear();
             comand.CommandText = "GetClienteById";
             comand.Parameters.AddWithValue("id", idClienteEdit);
@@ -61,7 +62,7 @@ namespace CiclismoDesktopPorCodigo.Views
             string nombreContacto = txtNombreContacto.Text;
             string apellidoContacto = txtApellidoContacto.Text;
 
-            comand.CommandType = CommandType.StoredProcedure;
+            
             comand.Parameters.Clear();
 
             if (idClienteEdit == null)

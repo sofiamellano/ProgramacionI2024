@@ -1,6 +1,6 @@
 ﻿namespace CiclismoDesktopPorCodigo.Views
 {
-    partial class ClientesStoredProceduresView
+    partial class ClientesORMView
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,6 @@
             btnSalir.TabIndex = 9;
             btnSalir.Text = "&Salir";
             btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
             // 
             // btnEliminar
             // 
@@ -82,10 +81,11 @@
             dataGridClientes.Location = new Point(21, 20);
             dataGridClientes.Name = "dataGridClientes";
             dataGridClientes.ReadOnly = true;
+            dataGridClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridClientes.Size = new Size(729, 333);
             dataGridClientes.TabIndex = 5;
             // 
-            // ClientesStoredProceduresView
+            // ClientesORMView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -95,9 +95,9 @@
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
             Controls.Add(dataGridClientes);
-            Name = "ClientesStoredProceduresView";
+            Name = "ClientesORMView";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "ClientesStoreProceduresView";
+            Text = "ClientesORMView";
             ((System.ComponentModel.ISupportInitialize)dataGridClientes).EndInit();
             ResumeLayout(false);
         }

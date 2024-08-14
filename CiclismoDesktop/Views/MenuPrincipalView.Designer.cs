@@ -34,9 +34,10 @@
             gestionDeEmpleadosToolStripMenuItem = new ToolStripMenuItem();
             gestionDeProductosToolStripMenuItem = new ToolStripMenuItem();
             gestionDeTipoDeProductoToolStripMenuItem = new ToolStripMenuItem();
+            gestionDeClientesStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             salirDelSistemaToolStripMenuItem = new ToolStripMenuItem();
-            gestionDeClientesStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
+            gestionClientesORMToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             // principalToolStripMenuItem
             // 
-            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem, gestionDeClientesStoredProceduresToolStripMenuItem });
+            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem, gestionDeClientesStoredProceduresToolStripMenuItem, gestionClientesORMToolStripMenuItem });
             principalToolStripMenuItem.Name = "principalToolStripMenuItem";
             principalToolStripMenuItem.Size = new Size(65, 20);
             principalToolStripMenuItem.Text = "Principal";
@@ -84,6 +85,13 @@
             gestionDeTipoDeProductoToolStripMenuItem.Text = "Gestion de Tipo de Producto";
             gestionDeTipoDeProductoToolStripMenuItem.Click += gestionDeTipoDeProductoToolStripMenuItem_Click;
             // 
+            // gestionDeClientesStoredProceduresToolStripMenuItem
+            // 
+            gestionDeClientesStoredProceduresToolStripMenuItem.Name = "gestionDeClientesStoredProceduresToolStripMenuItem";
+            gestionDeClientesStoredProceduresToolStripMenuItem.Size = new Size(274, 22);
+            gestionDeClientesStoredProceduresToolStripMenuItem.Text = "Gestion de Clientes Stored Procedures";
+            gestionDeClientesStoredProceduresToolStripMenuItem.Click += gestionDeClientesStoredProceduresToolStripMenuItem_Click;
+            // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salirDelSistemaToolStripMenuItem });
@@ -98,12 +106,12 @@
             salirDelSistemaToolStripMenuItem.Text = "Salir del Sistema";
             salirDelSistemaToolStripMenuItem.Click += salirDelSistemaToolStripMenuItem_Click;
             // 
-            // gestionDeClientesStoredProceduresToolStripMenuItem
+            // gestionClientesORMToolStripMenuItem
             // 
-            gestionDeClientesStoredProceduresToolStripMenuItem.Name = "gestionDeClientesStoredProceduresToolStripMenuItem";
-            gestionDeClientesStoredProceduresToolStripMenuItem.Size = new Size(274, 22);
-            gestionDeClientesStoredProceduresToolStripMenuItem.Text = "Gestion de Clientes Stored Procedures";
-            gestionDeClientesStoredProceduresToolStripMenuItem.Click += gestionDeClientesStoredProceduresToolStripMenuItem_Click;
+            gestionClientesORMToolStripMenuItem.Name = "gestionClientesORMToolStripMenuItem";
+            gestionClientesORMToolStripMenuItem.Size = new Size(274, 22);
+            gestionClientesORMToolStripMenuItem.Text = "Gestion Clientes ORM";
+            gestionClientesORMToolStripMenuItem.Click += gestionClientesORMToolStripMenuItem_Click;
             // 
             // MenuPrincipalView
             // 
@@ -133,5 +141,6 @@
         private ToolStripMenuItem gestionDeProductosToolStripMenuItem;
         private ToolStripMenuItem gestionDeTipoDeProductoToolStripMenuItem;
         private ToolStripMenuItem gestionDeClientesStoredProceduresToolStripMenuItem;
+        private ToolStripMenuItem gestionClientesORMToolStripMenuItem;
     }
 }
