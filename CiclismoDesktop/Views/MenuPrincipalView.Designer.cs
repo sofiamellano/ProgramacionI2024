@@ -35,9 +35,10 @@
             gestionDeProductosToolStripMenuItem = new ToolStripMenuItem();
             gestionDeTipoDeProductoToolStripMenuItem = new ToolStripMenuItem();
             gestionDeClientesStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
+            gestionClientesORMToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             salirDelSistemaToolStripMenuItem = new ToolStripMenuItem();
-            gestionClientesORMToolStripMenuItem = new ToolStripMenuItem();
+            gestionDeProductosStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             // principalToolStripMenuItem
             // 
-            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem, gestionDeClientesStoredProceduresToolStripMenuItem, gestionClientesORMToolStripMenuItem });
+            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem, gestionDeClientesStoredProceduresToolStripMenuItem, gestionClientesORMToolStripMenuItem, gestionDeProductosStoredProceduresToolStripMenuItem });
             principalToolStripMenuItem.Name = "principalToolStripMenuItem";
             principalToolStripMenuItem.Size = new Size(65, 20);
             principalToolStripMenuItem.Text = "Principal";
@@ -60,37 +61,44 @@
             // gestionDeClientesToolStripMenuItem
             // 
             gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
-            gestionDeClientesToolStripMenuItem.Size = new Size(274, 22);
+            gestionDeClientesToolStripMenuItem.Size = new Size(286, 22);
             gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
             gestionDeClientesToolStripMenuItem.Click += gestionDeClientesToolStripMenuItem_Click;
             // 
             // gestionDeEmpleadosToolStripMenuItem
             // 
             gestionDeEmpleadosToolStripMenuItem.Name = "gestionDeEmpleadosToolStripMenuItem";
-            gestionDeEmpleadosToolStripMenuItem.Size = new Size(274, 22);
+            gestionDeEmpleadosToolStripMenuItem.Size = new Size(286, 22);
             gestionDeEmpleadosToolStripMenuItem.Text = "Gestion de Empleados";
             gestionDeEmpleadosToolStripMenuItem.Click += gestionDeEmpleadosToolStripMenuItem_Click;
             // 
             // gestionDeProductosToolStripMenuItem
             // 
             gestionDeProductosToolStripMenuItem.Name = "gestionDeProductosToolStripMenuItem";
-            gestionDeProductosToolStripMenuItem.Size = new Size(274, 22);
+            gestionDeProductosToolStripMenuItem.Size = new Size(286, 22);
             gestionDeProductosToolStripMenuItem.Text = "Gestion de Productos";
             gestionDeProductosToolStripMenuItem.Click += gestionDeProductosToolStripMenuItem_Click;
             // 
             // gestionDeTipoDeProductoToolStripMenuItem
             // 
             gestionDeTipoDeProductoToolStripMenuItem.Name = "gestionDeTipoDeProductoToolStripMenuItem";
-            gestionDeTipoDeProductoToolStripMenuItem.Size = new Size(274, 22);
+            gestionDeTipoDeProductoToolStripMenuItem.Size = new Size(286, 22);
             gestionDeTipoDeProductoToolStripMenuItem.Text = "Gestion de Tipo de Producto";
             gestionDeTipoDeProductoToolStripMenuItem.Click += gestionDeTipoDeProductoToolStripMenuItem_Click;
             // 
             // gestionDeClientesStoredProceduresToolStripMenuItem
             // 
             gestionDeClientesStoredProceduresToolStripMenuItem.Name = "gestionDeClientesStoredProceduresToolStripMenuItem";
-            gestionDeClientesStoredProceduresToolStripMenuItem.Size = new Size(274, 22);
+            gestionDeClientesStoredProceduresToolStripMenuItem.Size = new Size(286, 22);
             gestionDeClientesStoredProceduresToolStripMenuItem.Text = "Gestion de Clientes Stored Procedures";
             gestionDeClientesStoredProceduresToolStripMenuItem.Click += gestionDeClientesStoredProceduresToolStripMenuItem_Click;
+            // 
+            // gestionClientesORMToolStripMenuItem
+            // 
+            gestionClientesORMToolStripMenuItem.Name = "gestionClientesORMToolStripMenuItem";
+            gestionClientesORMToolStripMenuItem.Size = new Size(286, 22);
+            gestionClientesORMToolStripMenuItem.Text = "Gestion Clientes ORM";
+            gestionClientesORMToolStripMenuItem.Click += gestionClientesORMToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
@@ -106,12 +114,12 @@
             salirDelSistemaToolStripMenuItem.Text = "Salir del Sistema";
             salirDelSistemaToolStripMenuItem.Click += salirDelSistemaToolStripMenuItem_Click;
             // 
-            // gestionClientesORMToolStripMenuItem
+            // gestionDeProductosStoredProceduresToolStripMenuItem
             // 
-            gestionClientesORMToolStripMenuItem.Name = "gestionClientesORMToolStripMenuItem";
-            gestionClientesORMToolStripMenuItem.Size = new Size(274, 22);
-            gestionClientesORMToolStripMenuItem.Text = "Gestion Clientes ORM";
-            gestionClientesORMToolStripMenuItem.Click += gestionClientesORMToolStripMenuItem_Click;
+            gestionDeProductosStoredProceduresToolStripMenuItem.Name = "gestionDeProductosStoredProceduresToolStripMenuItem";
+            gestionDeProductosStoredProceduresToolStripMenuItem.Size = new Size(286, 22);
+            gestionDeProductosStoredProceduresToolStripMenuItem.Text = "Gestion de Productos Stored Procedures";
+            gestionDeProductosStoredProceduresToolStripMenuItem.Click += gestionDeProductosStoredProceduresToolStripMenuItem_Click;
             // 
             // MenuPrincipalView
             // 
@@ -142,5 +150,6 @@
         private ToolStripMenuItem gestionDeTipoDeProductoToolStripMenuItem;
         private ToolStripMenuItem gestionDeClientesStoredProceduresToolStripMenuItem;
         private ToolStripMenuItem gestionClientesORMToolStripMenuItem;
+        private ToolStripMenuItem gestionDeProductosStoredProceduresToolStripMenuItem;
     }
 }
