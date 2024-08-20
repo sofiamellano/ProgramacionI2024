@@ -1,4 +1,5 @@
 using CiclismoDesktopPorCodigo.Views;
+using CiclismoDesktopPorCodigo.Views.LINQ;
 
 namespace CiclismoDesktop
 {
@@ -52,8 +53,14 @@ namespace CiclismoDesktop
 
         private void gestionDeProductosStoredProceduresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           ProductosStoredProceduresView productosStoredProceduresView = new ProductosStoredProceduresView();
+            ProductosStoredProceduresView productosStoredProceduresView = new ProductosStoredProceduresView();
             productosStoredProceduresView.ShowDialog();
+        }
+
+        private void pruebasConLINQToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PruebasLINQView pruebasLINQView = new PruebasLINQView();
+            pruebasLINQView.ShowDialog();
         }
     }
 }

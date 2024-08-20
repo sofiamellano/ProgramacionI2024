@@ -36,9 +36,10 @@
             gestionDeTipoDeProductoToolStripMenuItem = new ToolStripMenuItem();
             gestionDeClientesStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
             gestionClientesORMToolStripMenuItem = new ToolStripMenuItem();
+            gestionDeProductosStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             salirDelSistemaToolStripMenuItem = new ToolStripMenuItem();
-            gestionDeProductosStoredProceduresToolStripMenuItem = new ToolStripMenuItem();
+            pruebasConLINQToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // 
             // principalToolStripMenuItem
             // 
-            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem, gestionDeClientesStoredProceduresToolStripMenuItem, gestionClientesORMToolStripMenuItem, gestionDeProductosStoredProceduresToolStripMenuItem });
+            principalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionDeClientesToolStripMenuItem, gestionDeEmpleadosToolStripMenuItem, gestionDeProductosToolStripMenuItem, gestionDeTipoDeProductoToolStripMenuItem, gestionDeClientesStoredProceduresToolStripMenuItem, gestionClientesORMToolStripMenuItem, gestionDeProductosStoredProceduresToolStripMenuItem, pruebasConLINQToolStripMenuItem });
             principalToolStripMenuItem.Name = "principalToolStripMenuItem";
             principalToolStripMenuItem.Size = new Size(65, 20);
             principalToolStripMenuItem.Text = "Principal";
@@ -100,6 +101,13 @@
             gestionClientesORMToolStripMenuItem.Text = "Gestion Clientes ORM";
             gestionClientesORMToolStripMenuItem.Click += gestionClientesORMToolStripMenuItem_Click;
             // 
+            // gestionDeProductosStoredProceduresToolStripMenuItem
+            // 
+            gestionDeProductosStoredProceduresToolStripMenuItem.Name = "gestionDeProductosStoredProceduresToolStripMenuItem";
+            gestionDeProductosStoredProceduresToolStripMenuItem.Size = new Size(286, 22);
+            gestionDeProductosStoredProceduresToolStripMenuItem.Text = "Gestion de Productos Stored Procedures";
+            gestionDeProductosStoredProceduresToolStripMenuItem.Click += gestionDeProductosStoredProceduresToolStripMenuItem_Click;
+            // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salirDelSistemaToolStripMenuItem });
@@ -114,12 +122,12 @@
             salirDelSistemaToolStripMenuItem.Text = "Salir del Sistema";
             salirDelSistemaToolStripMenuItem.Click += salirDelSistemaToolStripMenuItem_Click;
             // 
-            // gestionDeProductosStoredProceduresToolStripMenuItem
+            // pruebasConLINQToolStripMenuItem
             // 
-            gestionDeProductosStoredProceduresToolStripMenuItem.Name = "gestionDeProductosStoredProceduresToolStripMenuItem";
-            gestionDeProductosStoredProceduresToolStripMenuItem.Size = new Size(286, 22);
-            gestionDeProductosStoredProceduresToolStripMenuItem.Text = "Gestion de Productos Stored Procedures";
-            gestionDeProductosStoredProceduresToolStripMenuItem.Click += gestionDeProductosStoredProceduresToolStripMenuItem_Click;
+            pruebasConLINQToolStripMenuItem.Name = "pruebasConLINQToolStripMenuItem";
+            pruebasConLINQToolStripMenuItem.Size = new Size(286, 22);
+            pruebasConLINQToolStripMenuItem.Text = "Pruebas con LINQ";
+            pruebasConLINQToolStripMenuItem.Click += pruebasConLINQToolStripMenuItem_Click;
             // 
             // MenuPrincipalView
             // 
@@ -151,5 +159,6 @@
         private ToolStripMenuItem gestionDeClientesStoredProceduresToolStripMenuItem;
         private ToolStripMenuItem gestionClientesORMToolStripMenuItem;
         private ToolStripMenuItem gestionDeProductosStoredProceduresToolStripMenuItem;
+        private ToolStripMenuItem pruebasConLINQToolStripMenuItem;
     }
 }
