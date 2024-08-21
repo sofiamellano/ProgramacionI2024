@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CiclismoDesktopPorCodigo.Models
 {
-    public class Peliculas
+    internal class Peliculas
     {
         public string title { get; set; }
         public string director { get; set; }

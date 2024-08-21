@@ -1,5 +1,7 @@
-﻿using CiclismoDesktopPorCodigo.Modelos;
+﻿using CiclismoDesktopPorCodigo.DataContext;
+using CiclismoDesktopPorCodigo.Modelos;
 using CiclismoDesktopPorCodigo.Models;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -98,7 +100,12 @@ namespace CiclismoDesktopPorCodigo.Views.LINQ
 
         private void btnSelectMany_Click(object sender, EventArgs e)
         {
+            object[] objects = { 1, "San Justo", true, new string[] { "Hola", "Mundo" }, 5.5f, "Crespo", 7, 8, 9, 10, new string[] { "Santa Fe", "Argentina" } };
 
+            var textosEnArray = objects.OfType<string[]>().SelectMany(t => t).Select(t => new { Texto = t }).ToList();
+
+
+            dataGridResultados.DataSource = textosEnArray;
         }
 
         private void btnPruebaWhere_Click(object sender, EventArgs e)
@@ -132,6 +139,7 @@ namespace CiclismoDesktopPorCodigo.Views.LINQ
             }
         }
 
+
         private void btnPruebaOrderByAvanzado_Click(object sender, EventArgs e)
         {
             using (var context = new Ciclismo2Context())
@@ -139,6 +147,66 @@ namespace CiclismoDesktopPorCodigo.Views.LINQ
                 var clientes = context.Clientes.OrderBy(c => c.Pais).ThenBy(c => c.Nombre).ToList();
 
                 dataGridResultados.DataSource = clientes.ToList();
+            }
+        }
+
+        private void btnPruebaOffType_Click(object sender, EventArgs e)
+        {
+            ////creamos un array de objects
+            //object[] objects = { 1, "San Justo", true, new string[] { "Hola", "Mundo"}, 5.5f, "Crespo", 7, 8, 9, 10 };
+
+            //var textosEnArray = objects.OfType<string /*strin []*/>().Select(t => new { Texto = t }).ToList();
+
+            //// lo asignamos a la grilla
+            //dataGridResultados.DataSource = textosEnArray;
+        }
+
+        private void btnPruebaOrderByDecending_Click(object sender, EventArgs e)
+        {
+            using (var context = new ArgentinaContext())
+            {
+                //Extension Method (metodos de extension)
+                //var provincias = context.Provincias.OrderByDescending(p => p.Nombre);
+
+                //Query Expression
+                var provincias = from provincia in context.Provincias
+                                 orderby provincia.Nombre descending
+                                 select provincia;
+
+                dataGridResultados.DataSource = provincias.ToList();
+            }
+        }
+
+        private void btnGroupBy_Click(object sender, EventArgs e)
+        {
+            using (var context = new ArgentinaContext())
+            {
+                var dptosAgupadosXProvincias = context.Departamentos.Include(d => d.Provincias).GroupBy(d => d.ProvinciasId).Select(d => new
+                {
+                    Provincia = d.First().Provincias.Nombre,
+                    Departamentos = d.Count()
+                });
+
+                dataGridResultados.DataSource = dptosAgupadosXProvincias.ToList();
+            }
+        }
+
+        private void btnGroupBy2_Click(object sender, EventArgs e)
+        {
+            using (var context = new ArgentinaContext())
+            {
+                var localidadesPorDepartamento = context.Localidades
+                    .Where(l => l.Departamentos.Provincias.Nombre == "Santa Fe")
+                    .Include(l => l.Departamentos)
+                    .ThenInclude(l => l.Provincias)
+                    .GroupBy(l => l.DepartamentosId)
+                    .Select (l => new
+                    {
+                        Departamento = l.First().Departamentos.Nombre,
+                        Localidades = l.Count()
+                    });
+
+                dataGridResultados.DataSource = localidadesPorDepartamento.ToList();
             }
         }
     }

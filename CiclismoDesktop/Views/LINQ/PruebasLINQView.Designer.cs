@@ -41,6 +41,10 @@
             btnOrderBy = new Button();
             label1 = new Label();
             btnPruebaOrderByAvanzado = new Button();
+            btnPruebaOffType = new Button();
+            btnPruebaOrderByDecending = new Button();
+            btnGroupBy = new Button();
+            btnGroupBy2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridResultados).BeginInit();
             SuspendLayout();
             // 
@@ -106,7 +110,7 @@
             // 
             // btnSelectMany
             // 
-            btnSelectMany.BackColor = SystemColors.Highlight;
+            btnSelectMany.BackColor = SystemColors.ControlLight;
             btnSelectMany.Location = new Point(141, 281);
             btnSelectMany.Name = "btnSelectMany";
             btnSelectMany.Size = new Size(102, 53);
@@ -127,12 +131,13 @@
             // 
             // btnPruebaWhereAvanzado
             // 
+            btnPruebaWhereAvanzado.BackColor = SystemColors.ControlLight;
             btnPruebaWhereAvanzado.Location = new Point(141, 202);
             btnPruebaWhereAvanzado.Name = "btnPruebaWhereAvanzado";
             btnPruebaWhereAvanzado.Size = new Size(102, 53);
             btnPruebaWhereAvanzado.TabIndex = 8;
             btnPruebaWhereAvanzado.Text = "Prueba Where Avanzado";
-            btnPruebaWhereAvanzado.UseVisualStyleBackColor = true;
+            btnPruebaWhereAvanzado.UseVisualStyleBackColor = false;
             btnPruebaWhereAvanzado.Click += btnPruebaWhereAvanzado_Click;
             // 
             // txtFiltro
@@ -171,11 +176,55 @@
             btnPruebaOrderByAvanzado.UseVisualStyleBackColor = true;
             btnPruebaOrderByAvanzado.Click += btnPruebaOrderByAvanzado_Click;
             // 
+            // btnPruebaOffType
+            // 
+            btnPruebaOffType.Location = new Point(12, 36);
+            btnPruebaOffType.Name = "btnPruebaOffType";
+            btnPruebaOffType.Size = new Size(102, 53);
+            btnPruebaOffType.TabIndex = 13;
+            btnPruebaOffType.Text = "Prueba OffType";
+            btnPruebaOffType.UseVisualStyleBackColor = true;
+            btnPruebaOffType.Click += btnPruebaOffType_Click;
+            // 
+            // btnPruebaOrderByDecending
+            // 
+            btnPruebaOrderByDecending.Location = new Point(141, 36);
+            btnPruebaOrderByDecending.Name = "btnPruebaOrderByDecending";
+            btnPruebaOrderByDecending.Size = new Size(102, 53);
+            btnPruebaOrderByDecending.TabIndex = 14;
+            btnPruebaOrderByDecending.Text = "Prueba OrderBy Decending";
+            btnPruebaOrderByDecending.UseVisualStyleBackColor = true;
+            btnPruebaOrderByDecending.Click += btnPruebaOrderByDecending_Click;
+            // 
+            // btnGroupBy
+            // 
+            btnGroupBy.Location = new Point(249, 112);
+            btnGroupBy.Name = "btnGroupBy";
+            btnGroupBy.Size = new Size(102, 53);
+            btnGroupBy.TabIndex = 15;
+            btnGroupBy.Text = "Prueba GroupBy";
+            btnGroupBy.UseVisualStyleBackColor = true;
+            btnGroupBy.Click += btnGroupBy_Click;
+            // 
+            // btnGroupBy2
+            // 
+            btnGroupBy2.Location = new Point(249, 36);
+            btnGroupBy2.Name = "btnGroupBy2";
+            btnGroupBy2.Size = new Size(102, 53);
+            btnGroupBy2.TabIndex = 16;
+            btnGroupBy2.Text = "Prueba GroupBy2";
+            btnGroupBy2.UseVisualStyleBackColor = true;
+            btnGroupBy2.Click += btnGroupBy2_Click;
+            // 
             // PruebasLINQView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 515);
+            Controls.Add(btnGroupBy2);
+            Controls.Add(btnGroupBy);
+            Controls.Add(btnPruebaOrderByDecending);
+            Controls.Add(btnPruebaOffType);
             Controls.Add(btnPruebaOrderByAvanzado);
             Controls.Add(label1);
             Controls.Add(btnOrderBy);
@@ -212,5 +261,9 @@
         private Button btnOrderBy;
         private Label label1;
         private Button btnPruebaOrderByAvanzado;
+        private Button btnPruebaOffType;
+        private Button btnPruebaOrderByDecending;
+        private Button btnGroupBy;
+        private Button btnGroupBy2;
     }
 }
